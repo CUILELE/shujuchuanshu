@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="one" />
+		<input type="button" name="" id="" value="two" />
+		<ul>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var data1 = [
+			{name:'xsss',age:23},
+			{name:'cscs',age:26}
+		]
+		var data2 = [
+			{name:'cuile',age:12},
+			{name:'lecui',age:19},
+			{name:'cllaa',age:19}
+		]
+		var btns = document.getElementsByTagName('input');
+		var ul = document.getElementsByTagName('ul')[0];
+		var arr = [];
+
+		btns[0].onclick = function (){
+			window.location.search = "one";
+		}
+		btns[1].onclick = function (){
+			window.location.search = "two";
+		}
+		var str = window.location.search.split('?')[1];
+		
+//		console.log(str)
+		switch (str){
+			case 'one':
+				arr = data1
+				break;
+			case 'two':
+				arr = data2
+				break;
+		}
+		console.log(arr)
+		for(var i=0;i<arr.length;i++){
+			ul.innerHTML += '<li>'+arr[i].name+'年龄：'+arr[i].age+'</li>'
+		}
+
+
+//		btns[0].onclick = function (){
+//			window.location.hash = 'sh';
+//		}
+//		btns[1].onclick = function (){
+//			window.location.search = 'xy';
+//		}
+//		var str = window.location.search;
+//		
+//		switch (str){
+//			case '?sh':
+//				arr = data1;
+//				break;
+//			case'?xy':
+//				arr = data2;
+//				break;
+//		}
+//		
+//		for(var i=0;i<arr.length;i++){
+//			console.log(arr[i].name)	
+//			ul.innerHTML += '<li>'+arr[i].name+'年龄：'+arr[i].age+'</li>'
+//		}
+	</script>
+</html>
